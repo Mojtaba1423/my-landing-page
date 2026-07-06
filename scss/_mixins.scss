@@ -1,0 +1,32 @@
+// سنتر کردن المان‌ها با فلکس‌باکس
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// افکت شیشه‌ای (Glassmorphism)
+@mixin glass-effect {
+  background: $card-bg;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid $border-color;
+}
+
+// مدیریت ریسپانسیو (Media Queries)
+@mixin mobile {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 769px) {
+    @content;
+  }
+}
+
+// افکت سایه و عمق سینماتیک
+@mixin box-shadow-cinematic($color: rgba(0, 0, 0, 0.6)) {
+  box-shadow: 0 15px 35px $color;
+}

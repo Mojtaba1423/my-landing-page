@@ -1,0 +1,22 @@
+// --- پالت رنگی سینماتیک ---
+$bg-color: #050505;
+$text-light: #f0f0f0;
+$text-muted: #777;
+$accent-color: #ff3333; // زرشکی شخصی تو
+$accent-shadow: rgba(255, 51, 51, 0.3);
+
+// --- سطوح و مرزها (Glassmorphism) ---
+$card-bg: rgba(255, 255, 255, 0.03);
+$card-bg-hover: rgba(255, 255, 255, 0.08);
+$border-color: rgba(255, 255, 255, 0.08);
+$border-hover: rgba(255, 255, 255, 0.2);
+$shadow-dark: rgba(0, 0, 0, 0.6);
+$shadow-hover: rgba(0, 0, 0, 0.5);
+
+// --- فونت‌ها ---
+$font-persian: 'Vazirmatn', sans-serif;
+$font-english: 'Montserrat', sans-serif;
+
+// --- تایمینگ و انیمیشن‌ها ---
+$transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+$transition-fast: background-color 0.3s ease;

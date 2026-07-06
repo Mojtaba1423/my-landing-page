@@ -1,0 +1,201 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+/* --- فونت‌ها --- */
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('../fonts/Vazirmatn-Thin.woff2') format('woff2');
+    font-weight: 100;
+}
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('../fonts/Vazirmatn-Regular.woff2') format('woff2');
+    font-weight: 400;
+}
+@font-face { 
+    font-family: 'Montserrat'; 
+    src: url('../fonts/Montserrat-Bold.woff2') format('woff2'); 
+    font-weight: 800; 
+}
+@font-face { 
+    font-family: 'Montserrat'; 
+    src: url('../fonts/Montserrat-Regular.woff2') format('woff2'); 
+    font-weight: 400; 
+}
+
+/* --- بدنه اصلی --- */
+body { 
+    background-color: #050505;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../../img/me.webp') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Vazirmatn', sans-serif; 
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.75); /* کمی تیره‌تر برای کنتراست بهتر */
+    z-index: 0;
+}
+
+.container { 
+    position: relative;
+    z-index: 1;
+    text-align: center; 
+    width: 90%; 
+    max-width: 340px; 
+    padding: 3rem 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+/* --- بخش پروفایل --- */
+.profile-pic-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1.5rem auto;
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* تعامل عکس پروفایل */
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+/* --- تایتل MOJTABA (تعاملی) --- */
+h1 { 
+    font-size: 1.8rem;
+    letter-spacing: 8px;
+    margin-right: -8px; 
+    margin-bottom: 0.2rem;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800; 
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* افکت روی اسم */
+h1:hover {
+    letter-spacing: 12px;
+    color: #ff3333; /* رنگ زرشکی ملایم */
+    text-shadow: 0 0 10px rgba(255, 51, 51, 0.3);
+}
+
+h1:active {
+    transform: scale(0.95);
+}
+
+.bio { 
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 400; 
+    font-size: 0.65rem; 
+    color: #777; 
+    margin-bottom: 2.5rem; 
+    letter-spacing: 4px; 
+    margin-right: -4px;
+    text-transform: uppercase; 
+}
+
+/* --- بخش لینک‌ها و آیکون‌ها --- */
+.links { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+}
+
+.link-item {
+    font-family: 'Vazirmatn', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 1.1rem;
+    color: #bbb;
+    text-decoration: none;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.02);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 15px; 
+}
+
+/* افکت هاور دکمه‌ها */
+.link-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* آیکون‌ها */
+.icon {
+    width: 20px;
+    height: 20px;
+    background-color: #bbb; /* رنگ پیش‌فرض */
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    transition: background-color 0.3s ease;
+}
+
+/* تغییر رنگ آیکون هنگام هاور روی والد */
+.link-item:hover .icon {
+    background-color: #fff;
+}
+
+/* تعریف ماسک برای هر آیکون */
+.instagram { -webkit-mask-image: url('../icons/instagram.svg'); mask-image: url('../icons/instagram.svg'); }
+.telegram { -webkit-mask-image: url('../icons/telegram.svg'); mask-image: url('../icons/telegram.svg'); }
+.github { -webkit-mask-image: url('../icons/github.svg'); mask-image: url('../icons/github.svg'); }
+.mail { -webkit-mask-image: url('../icons/mail.svg'); mask-image: url('../icons/mail.svg'); }
+
+/* --- ریسپانسیو --- */
+@media (max-width: 480px) {
+    .container { padding: 2.5rem 1.2rem; width: 92%; }
+    .profile-pic-wrapper { width: 90px; height: 90px; margin-bottom: 1.2rem; }
+    h1 { font-size: 1.5rem; letter-spacing: 6px; margin-right: -6px; }
+    .bio { margin-bottom: 2rem; letter-spacing: 3px; margin-right: -3px; }
+}
+
+/* --- فوتر --- */
+.footer-note {
+    margin-top: 3.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.55rem;
+    font-weight: 100;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.2);
+    text-transform: uppercase;
+}
+
+@media (max-width: 480px) {
+    .footer-note { margin-top: 2.8rem; font-size: 0.5rem; }
+}
